@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_gallery/multiImage.dart';
 import 'package:my_gallery/tilt_sensor.dart';
 
 void main() {
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SensorApp(),
+      //home: const SensorApp(),
       //home: const MyGalleryApp(),
+      home: const MultiImageApp(),
     );
   }
 }
@@ -48,20 +50,21 @@ class _MyGalleryAppState extends State<MyGalleryApp> {
   }
 
   Future<void> LoadImages() async {
+    print("111111");
     images = await _picker.pickMultiImage();
-
-    if (images != null) {
-      Timer.periodic(const Duration(seconds: 5), (timer) {
-        currentPage++;
-        if (currentPage > images!.length - 1) {
-          currentPage = 0;
-        }
-
-        pageController.animateToPage(currentPage,
-            duration: Duration(milliseconds: 350), curve: Curves.easeIn);
-      });
-    }
-
+    print("2222222");
+    // if (images != null) {
+    //   Timer.periodic(const Duration(seconds: 5), (timer) {
+    //     currentPage++;
+    //     if (currentPage > images!.length - 1) {
+    //       currentPage = 0;
+    //     }
+    //
+    //     pageController.animateToPage(currentPage,
+    //         duration: Duration(milliseconds: 350), curve: Curves.easeIn);
+    //   });
+    // }
+    // print("333");
     setState(() {});
   }
 
