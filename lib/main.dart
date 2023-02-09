@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_gallery/multFile.dart';
 import 'package:my_gallery/tilt_sensor.dart';
 import 'package:my_gallery/xylophone.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       ),
      // home: const SensorApp(),
       //home: const MyGalleryApp(),
-      home : const XylophoneApp(),
+      //home : const XylophoneApp(),
+      home: const MultiFileApp(),
     );
   }
 }
